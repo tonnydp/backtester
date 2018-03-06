@@ -1,7 +1,7 @@
 import sqlite3
 import os
 
-con = sqlite3.connect("data.db")
+con = sqlite3.connect("..\\data.db")
 cur = con.cursor()
 create_table = """
 	CREATE TABLE IF NOT EXISTS Stock (
@@ -14,9 +14,9 @@ create_table = """
 		volume REAL)
 """
 cur.execute(create_table)
-for root, dirs, files in os.walk("data"):
+for root, dirs, files in os.walk("..\\data"):
 	for f in files:
-		ff = open("data\\" + f, 'r')
+		ff = open("..\\data\\" + f, 'r')
 		lines = ff.readlines()
 		if len(lines) <= 1:
 			print(f + "BAD")
